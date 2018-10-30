@@ -4,11 +4,13 @@
 This is a simplified, terminal version of 2048 game.<br>
 I developed it just for fun.<br>
 Play the original game [here](https://play2048.co/)!
-<br>
+
+
 ### Download and run it in your terminal
 1. Download the file into your own laptop
 2. Run `$ python3 2048.py` in your terminal
-<br>
+
+
 ### Algorithm: State Machine
 - State machine is basically the `main()` function in my program. The state machine uses `state` variable to store the current state of the game. <br>
 
@@ -27,7 +29,8 @@ state_actions = {
 while state != 'Exit':
     state = state_actions[state]()
 ```
-<br>
+
+
 ### Reference
 - The original 2048 game: https://play2048.co/.
 - Terminal_2048 original version: https://www.shiyanlou.com/courses/368.

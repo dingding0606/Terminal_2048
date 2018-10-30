@@ -2,10 +2,9 @@ import curses # curses: python标准库中的一个模块，用来处理命令�
 from random import randint, choice
 import numpy as np
 
-
 actions = ["UP", "DOWN", "LEFT", "RIGHT", "RESTART", "EXIT"]
 letter_codes = [ord(c) for c in "wsadreWSADRE"] #ord('char') returns the unicode of a char.
-actions_dict = dict(zip(letter_codes, actions * 2))
+actions_dict = dict(zip(letter_codes, actions * 2)) # creating dictionary to link letter codes and actions
 
 def get_user_action(window):
     char = "N"
@@ -43,7 +42,6 @@ class GameField(object):
         if possible_pos != []:
             pos = choice(possible_pos)
             self.field[ int(pos[0]) ][ int(pos[1]) ] = number
-
 
     # draw the chess board whenever it needs to update
     def draw(self, screen):
@@ -147,7 +145,6 @@ class GameField(object):
             self.field = field_rotate_anticlockwise(self.field, 3)
             move_one_direction()
             self.field = field_rotate_anticlockwise(self.field, 1)
-
 
 
 # 状态机：state 存储当前状态，state_actions 这个词典变量作为状态转换的规则，它的 key 是状态，value 是返回下一个状态的函数
@@ -254,9 +251,3 @@ def main(stdscr):
 
 if __name__ == "__main__":
     curses.wrapper(main)
-    curses.use_default_colors()
-    for i in range(0, curses.COLORS):
-        curses.init_pair(i, i, -1);
-
-
-# TODO: redo the move
